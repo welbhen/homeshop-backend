@@ -79,8 +79,10 @@ require('./database');
     app.use('/user', require('./routes/user.routes'));
 
 // Server:
-    app.set('port', process.env.PORT || 8000);
-    app.listen(app.get('port'), () => {
+    //app.set('port', process.env.PORT || 8000);
+    const PORT = process.env.PORT || 8000;
+
+    app.listen(PORT, () => {
         console.log("Env: " + process.env.NODE_ENV);
-        console.log("Server opened!");
+        console.log("Server opened! Port: " + PORT);
     });
