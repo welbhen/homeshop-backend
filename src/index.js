@@ -81,7 +81,6 @@ require('./database');
 // Server:
     //app.set('port', process.env.PORT || 8000);
     const PORT = process.env.PORT || 8000;
-
     app.listen(PORT, () => {
         console.log("Env: " + process.env.NODE_ENV);
         console.log("Server opened! Port: " + PORT);
