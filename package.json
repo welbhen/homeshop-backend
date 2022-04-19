@@ -7,7 +7,7 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
-  "author": "Welberth Marques",
+  "author": "Welberth Henrique Marques",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
