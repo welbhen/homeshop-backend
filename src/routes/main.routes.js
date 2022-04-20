@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
+
 const bcrypt = require('bcryptjs');
+
+const mongoose = require('mongoose');
 require('../models/Product');
 const Product = mongoose.model('Product');
 require('../models/Order');
@@ -108,7 +110,6 @@ router.get('/product/:id', async (req, res) => {
 });
 
 router.post('/purchase', async (req, res) => {
-    // Todo: #### VALIDATE DATA
     var errors = [];
     try{
         const transaction = req.body;

@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
-//const bcrypt = require('bcryptjs');
+
 const passport = require('passport');
-//require('../models/Product');
-//const Product = mongoose.model('Product');
+
+const mongoose = require('mongoose');
 require('../models/Order');
 const Order = mongoose.model('Order');
 require('../models/User');
@@ -146,16 +145,6 @@ router.post('/login', async (req, res, next) => {
     }
 	
 });
-
-// ############# THIS IS A TEST ROUTE:
-router.get('/data', async (req, res) => {
-    // The req.user stores the entire user that has been authenticated
-    //console.log("Inside /user/data, user: " + JSON.stringify(req.session.passport.user));
-    res.send("User data: " + req.user);
-    console.log('Cookies: ', req.cookies);
-    console.log('Signed Cookies: ', req.signedCookies);
-});
-// #############
 
 router.get('/logout', (req, res) => {
 	req.logout();

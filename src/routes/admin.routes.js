@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
+
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 require('../models/Product');
 const Product = mongoose.model('Product');
 require('../models/Order');
@@ -24,11 +24,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/stock', async (req, res) => {
-    /*
-        ### ADD DELETE BUTTON
-        ### AND
-        ### + / - QUANTITY IN STOCK
-    */
     try {
         let products = await Product.find().lean();
         res.json({

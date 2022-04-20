@@ -1,6 +1,8 @@
 const localStrategy = require('passport-local').Strategy;
-const mongoose = require('mongoose');
+
 const bcrypt = require('bcryptjs');
+
+const mongoose = require('mongoose');
 require('./models/User');
 const User = mongoose.model('User');
 
@@ -59,15 +61,5 @@ module.exports = function(passport){
 		User.findById(id, (err, user) => {
 			done(err, user);
 		});
-		/*
-		try{
-			User.findById(id, (err, user) => {
-				done(err, user);
-			});
-		}catch(err) {
-			console.log("Error deserializing user: " + err);
-			done(err);
-		}
-		*/
 	});
 }
